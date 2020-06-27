@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -13,10 +13,20 @@
 <body>
     <header>
         <nav class="nav">
-            <a href="#" class="nav__link current">home</a>
-            <a href="#" class="nav__link">portfolio</a>
-            <a href="#about_us" class="nav__link">about us</a>
-            <a href="#" class="nav__link">contact</a>
+            <ul class="nav__list">
+                <li class="nav__item current">
+                    <a href="#" class="nav__link">home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">portfolio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about_us" class="nav__link">about us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">contact</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
@@ -162,6 +172,26 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="subscribing">
+            <img src="./img/subscribe_background-min.jpg" alt="" class="background">
+            <h2 class="title subscribing__title">Design tips, tricks, and freebies. Delivered weekly.</h2>
+            <p class="text subscribing__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ut fugiat sequi earum!</p>
+            <input type="email" id="email" placeholder="Email Address..." class="subscribing__email">
+            <button class="button subscribing__button">subscribe</button>
+        </section>
+
+        <section class="contact">
+            <h2 class="title contact__title">get in touch</h2>
+            <p class="text contact__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque quibusdam velit non sapiente, hic consectetur ipsam porro praesentium dolorem nobis minima ad, quas aspernatur magni harum enim, repellat incidunt culpa earum inventore! Quos impedit, tenetur eius mollitia voluptate reiciendis! Sequi!</p>
+            <hr class="delimiter contact__delimiter">
+
+            <div>
+                <form class="contact__form"></form>
+            </div>
+
+            <div class="contact__info"></div>
         </section>
     </main>
 
