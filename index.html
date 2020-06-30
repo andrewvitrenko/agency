@@ -29,6 +29,10 @@
                 </li>
             </ul>
         </nav>
+
+        <div class="burger" onclick="navHandler()">
+            <span></span>
+        </div>
     </header>
 
     <main>
@@ -241,6 +245,14 @@
         <i class="fab fa-google-plus-g" style="font-weight: bold;"></i>
         <i class="fab fa-facebook-f"></i>
     </footer>
+
+    <script>
+        function navHandler() {
+            document.getElementsByClassName('burger')[0].classList.toggle('active')
+
+            document.getElementsByClassName('nav')[0].classList.toggle('visible')
+        }
+    </script>
 </body>
 
 </html>

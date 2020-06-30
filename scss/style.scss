@@ -1,5 +1,8 @@
 $orange-01: #ff2d2d;
 
+$maxWidth: 1577;
+@import '../../adaptiv-mixins.scss';
+
 * {
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
@@ -16,16 +19,22 @@ header {
     position: fixed;
     height: 89px;
     width: 100%;
-    padding: 0 164.28/1577*100%;
-    top: 30px;
+    //padding: 0 164.28/1577*100%;
+    @include adaptivHpadding (164.28, 164.28, 0, 0, 1248.44);
+    top: 30/350*100%;
     z-index: 50;
+}
+
+.burger {
+    display: none;
 }
 
 .nav {
     height: 100%;
     width: 100%;
     background-color: #313030;
-    padding: 0 420/1247*100% 0 358/1247*100%;
+    //padding: 0 420px 0 358px;
+    @include adaptivHpadding(358, 420, 150, 0, 768);
 
     &__list {
         display: inline-flex;
@@ -66,14 +75,17 @@ header {
 .title {
     text-transform: uppercase;
     color: #333333;
-    font-size: 42px;
+    //font-size: 42px;
+    @include adaptiv-font(42, 34);
     font-weight: 700;
     margin-top: 0;
     line-height: normal;
 }
 
 .banner {
-    padding: 228px 164.28/1577*100% 123px;
+    //padding: 228px 164.28px 123px;
+    @include adaptivVpadding(228, 123, 150, 50, 768);
+    @include adaptivHpadding(164.28, 164.28, 50, 50, 768);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,7 +94,8 @@ header {
 
     &__title {
         color: black;
-        font-size: 60px;
+        //font-size: 60px;
+        @include adaptiv-font(60, 38);
         font-weight: 900;
         margin-bottom: 30/697*100%;
     }
@@ -96,7 +109,8 @@ header {
     }
 
     .text__container {
-        padding-right: 112/1247*100%;
+        padding-right: 112/1248.44*100%;
+        flex-basis: 698.44/1248.44*100%;
     }
 
     &__button {
@@ -110,13 +124,14 @@ header {
 }
 
 .video__container {
-    flex-basis: 550/(1577-165-165)*100%;
-    flex-shrink: 0;
+    flex-basis: 550/(1577-164.28-164.28)*100%;
+    min-width: 400px;
 }
 
 .text {
     color: black;
-    font-size: 16px;
+    //font-size: 16px;
+    @include adaptiv-font(16, 12);
     line-height: 2;
     margin-top: 0;
 }
@@ -144,7 +159,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 115px 147.84/1577*100% 70px 164.28/1577*100%;
+    //padding: 115px 147.84px 70px 164.28px;
+    @include adaptivVpadding(115, 70, 30, 30, 320);
+    @include adaptivHpadding(164.28, 147.84, 20, 10, 320);
 
     .text__container {
         flex-basis: 50%;
@@ -162,6 +179,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-basis: 50%;
+    min-width: 450px;
 
     &__title {
         text-transform: capitalize;
@@ -173,8 +191,9 @@ header {
 
     &__item {
         flex-basis: 50%;
-        padding-right: 20px;
+        padding-right: 20/633*100%;
         margin-bottom: 35/628.5*100%;
+        min-width: 300px;
     }
 
     &__text {
@@ -217,7 +236,9 @@ header {
 
 .products {
     text-align: center;
-    padding: 100/1577*100% 164.28/1577*100% 115/1577*100%;
+    //padding: 100px 164.28px 115px;
+    @include adaptivVpadding(100, 115, 70, 50, 768);
+    @include adaptivHpadding(164.28, 164.28, 25, 25, 768);
 
     &__delimiter {
         width: 130/1257*100%;
@@ -242,7 +263,8 @@ header {
         width: 300/1257*100%;
         object-fit: cover;
         height: 300px;
-        margin-bottom: 20/1257*100%;
+        margin-bottom: 20/1248.44*100%;
+        min-width: 300px;
     }
 
     &__text {
@@ -260,7 +282,8 @@ header {
         text-transform: uppercase;
         letter-spacing: 0.75px;
         color: #4c4c4c;
-        font-size: 22px;
+        //font-size: 22px;
+        font-size: calc(18px + 4 * ((100vw - 768px) / 809));
         font-weight: 600;
         margin: 0 30/1257*100%;
     }
@@ -276,7 +299,9 @@ header {
 }
 
 .team {
-    padding: 0 164.28/1577*100% 115/1577*100%;
+    //padding: 0 164.28px 115px;
+    @include adaptivHpadding(164.28, 164.28, 55, 55, 768);
+    @include adaptivVpadding(0, 115, 0, 50, 768);
 
     &__title {
         margin-left: -15px;
@@ -305,11 +330,14 @@ header {
 }
 
 .team__member {
-    width: 215px;
-    height: 195px;
+    //width: 215px;
+    //height: 195px;
+    @include adaptiv-height(195, 136, 768);
+    @include adaptiv-width(215, 150, 768);
     margin: 0 10/1257*100%;
     position: relative;
     transition: all 0.3s ease-in;
+    flex-shrink: 0;
 
     .info {
         transform-origin: bottom left;
@@ -318,7 +346,8 @@ header {
         left: 0;
         top: 100%;
         transition: all 0.3s ease-in;
-        width: 200%;
+        //width: 200%;
+        @include adaptiv-width(605, 450, 768)
     }
 }
 
@@ -329,8 +358,10 @@ header {
 }
 
 .team__member.active {
-    height: 460px;
-    width: 320px;
+    //height: 460px;
+    //width: 320px;
+    @include adaptiv-width(320, 200, 768);
+    @include adaptiv-height(460, 288, 768);
     margin: 0 65/1257*100%;
 
     .info {
@@ -411,7 +442,9 @@ header {
 }
 
 .contact {
-    padding: 110/1577*100% 0 110/1577*100% 164.28/1577*100%;
+    padding: 110/1577*100% 0;
+    @include adaptivHpadding(164.28, 164.28, 50, 50, 768);
+    padding-right: 0;
 
     &__text {
         padding-right: 682.2/1577*100%;
@@ -521,7 +554,8 @@ header {
 footer {
     display: flex;
     flex-direction: row;
-    padding: 45/1577*100% 164.28/1577*100% 30/1577*100%;
+    padding: 45/1577*100% 164.28px 30/1577*100%;
+    @include adaptivHpadding(164.28, 164.28, 5, 5, 320);
     background-color: #313030;
     color: #afafaf;
     align-items: center;
@@ -529,8 +563,12 @@ footer {
     i {
         color: #313030;
         background-color: #ebebeb;
-        height: 33px;
-        width: 33px;
+        //height: 33px;
+        //width: 33px;
+        @include adaptiv-height(33, 25, 320);
+        @include adaptiv-width(33, 25, 320);
+        @include adaptiv-font(16, 12);
+        flex-shrink: 0;
         border-radius: 50%;
         position: relative;
         margin-left: 18/(1577-164.28-164.28)*100%;
@@ -555,4 +593,282 @@ footer {
 .license {
     margin: 0;
     letter-spacing: 0.75px;
+    @include adaptiv-font(16, 12);
+}
+
+@media all and (max-width: 1502px) {
+    .products {
+        &__list {
+            justify-content: space-around;
+        }
+
+        &__item {
+            margin-bottom: 5%;
+        }
+    }
+}
+
+@media all and (max-width: 1248.44px) {
+    header {
+        padding: 0;
+        width: 100%;
+    }
+
+    .banner {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .text__container {
+            flex-basis: 100%;
+            margin-bottom: 5%;
+            padding-right: 0;
+        }
+    }
+
+    .video__container {
+        flex-basis: 75%;
+        min-width: 300px;
+    }
+}
+
+@media all and (max-width: 1220px) {
+    .team {
+        &__list {
+            flex-wrap: wrap;
+        }
+
+        &__member.active {
+            flex-basis: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 5%;
+            margin-right: 0;
+
+            .info {
+               position: static;
+               margin-left: 5%;
+               width: auto
+            }
+
+            .avatar {
+                width: 25%;
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1130px) {
+    .contact__info {
+        flex-basis: 100%;
+        margin-top: 5%;
+    }
+
+    .contact {
+        @include adaptivHpadding(164.28, 164.28, 50, 50, 768);
+    }
+
+    .contact__form {
+        flex-basis: 100%;
+        min-width: 0;
+    }
+}
+
+@media all and (max-width: 1121px) {
+    .skills, .about .text__container {
+        flex-basis: 100%;
+        min-width: 0;
+    }
+
+    .about {
+        .text__container {
+            margin-bottom: 15%;
+            padding-right: 0;
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    header {
+        background-color: darkgray;
+        position: relative;
+        top: 0;
+    }
+
+    .nav {
+        transform-origin: top right;
+        transform: rotate(180deg) scale(0);
+        transition: all 0.5s ease-in;
+        position: absolute;
+        top: -100%;
+        left: 100%;
+    }
+
+    .burger {
+        display: block;
+        width: 30px;
+        height: 25px;
+        background: none;
+        position: relative;
+        transition: all 0.5s ease-in;
+        margin-left: auto;
+        margin-right: 5%;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    .burger::before, .burger::after {
+        content: '';
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        background-color: $orange-01;
+        transition: all 0.5s ease-in;
+        left: 0;
+    }
+
+    .burger span {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        transform-origin: top left;
+        background-color: $orange-01;
+        top: 50%;
+        transition: all 0.5s ease-in;
+        transform: translate(0, -50%);
+    }
+
+    .burger::before {
+        top: 0;
+        transform-origin: bottom left;
+    }
+
+    .burger::after {
+        bottom: 0;
+        transform-origin: top left;
+    }
+
+    .burger.active {
+        width: 23px;
+        height: 24px;
+
+        span {
+            transform: scale(0);
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .nav.visible {
+        transform: rotate(0deg) scale(1);
+        left: 0;
+        top: 0;
+
+    }
+
+    .banner {
+        padding: 3% 10/320*100% 0;
+    }
+
+    .filter {
+        flex-wrap: wrap;
+        padding: 3% 0;
+
+        &__item {
+            margin-bottom: 5%;
+        }
+    }
+
+    .products {
+        &__text {
+            padding: 0 2%;
+        }
+    }
+
+    .team__member.active {
+        width: auto;
+    }
+
+    .thread__link {
+        margin-bottom: 5%;
+        display: inline-block;
+    }
+
+    .contact {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        &__text {
+            padding-right: 0;
+        }
+    }
+}
+
+@media all and (max-width: 719px) {
+    .skills {
+        &__item {
+            flex-basis: 100%;
+            margin-bottom: 15%;
+        }
+
+        &__item:last-child {
+            margin-bottom: 7%;
+        }
+
+        &__title {
+            margin-bottom: 4.5%;
+        }
+    }
+
+    .illustration {
+        margin-bottom: 5%;
+    }
+}
+
+@media all and (max-width: 554px) {
+    .contact {
+        &__name {
+            flex-basis: 100%;
+            margin-bottom: 45/731*100%;
+        }
+
+        &__email {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@media all and (max-width: 550px) {
+    .team {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        &__list {
+            justify-content: space-around;
+        }
+
+        &__member {
+            margin-bottom: 5%;
+        }
+
+        &__member.active {
+            height: auto;
+            flex-wrap: wrap;
+
+            .avatar {
+                width: 100%;
+                margin-bottom: 5%;
+            }
+
+            .info {
+                margin-left: 0;
+            }
+        }
+    }
 }
