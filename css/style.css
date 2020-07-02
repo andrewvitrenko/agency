@@ -162,9 +162,12 @@ header {
   color: white;
   background-color: #ff2d2d;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: calc(14px + 4 * ((100vw - 320px) / 1257));
   border-radius: 5px;
-  padding: 18px 61px;
+  padding-top: calc(16px + 2 * ((100vw - 320px) / 1257));
+  padding-bottom: calc(16px + 2 * ((100vw - 320px) / 1257));
+  padding-left: calc(50px + 11 * ((100vw - 320px) / 1257));
+  padding-right: calc(50px + 11 * ((100vw - 320px) / 1257));
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   border: 2px solid #ff2d2d;
@@ -254,8 +257,11 @@ header {
   color: #ff2d2d;
   border: 2px solid #ff2d2d;
   border-radius: 5px;
-  padding: 18px 58px;
-  font-size: 18px;
+  padding-top: calc(15px + 3 * ((100vw - 320px) / 1257));
+  padding-bottom: calc(15px + 3 * ((100vw - 320px) / 1257));
+  padding-left: calc(35px + 23 * ((100vw - 320px) / 1257));
+  padding-right: calc(35px + 23 * ((100vw - 320px) / 1257));
+  font-size: calc(14px + 4 * ((100vw - 320px) / 1257));
   font-weight: 600;
   display: inline-block;
   letter-spacing: 0.8px;
@@ -472,7 +478,10 @@ header {
 }
 
 .subscribing {
-  padding: 8.87762% 15.13951%;
+  padding-top: calc(15px + 125 * ((100vw - 320px) / 1257));
+  padding-bottom: calc(15px + 125 * ((100vw - 320px) / 1257));
+  padding-left: calc(10px + 228.75 * ((100vw - 320px) / 1257));
+  padding-right: calc(10px + 228.75 * ((100vw - 320px) / 1257));
   text-align: center;
   position: relative;
 }
@@ -489,10 +498,13 @@ header {
 
 .subscribing__email {
   color: #6b6b6b;
-  font-size: 16px;
+  font-size: calc(14px + 2 * ((100vw - 320px) / 1257));
   border: none;
   border-radius: 5px;
-  padding: 25.6px 35px;
+  padding-top: calc(18px + 7.6 * ((100vw - 320px) / 1257));
+  padding-bottom: calc(18px + 7.6 * ((100vw - 320px) / 1257));
+  padding-left: calc(20px + 15 * ((100vw - 320px) / 1257));
+  padding-right: calc(20px + 15 * ((100vw - 320px) / 1257));
   outline: none;
   width: 47.36364%;
   margin-right: 1.81818%;
@@ -500,7 +512,10 @@ header {
 }
 
 .subscribing__button {
-  padding: 28px 57.63px;
+  padding-left: calc(31px + 26.63 * ((100vw - 320px) / 1257));
+  padding-right: calc(31px + 26.63 * ((100vw - 320px) / 1257));
+  padding-top: calc(15px + 13 * ((100vw - 320px) / 1257));
+  padding-bottom: calc(15px + 13 * ((100vw - 320px) / 1257));
 }
 
 .background {
@@ -546,8 +561,10 @@ header {
 
 .contact__button {
   width: 100%;
-  padding-top: 28px;
-  padding-bottom: 28px;
+  /*padding-top: 28px;
+        padding-bottom: 28px;*/
+  padding-top: calc(16px + 12 * ((100vw - 320px) / 1257));
+  padding-bottom: calc(16px + 12 * ((100vw - 320px) / 1257));
 }
 
 .contact__message {
@@ -696,6 +713,7 @@ footer i:nth-child(3) {
   margin: 0;
   letter-spacing: 0.75px;
   font-size: calc(12px + 4 * ((100vw - 320px) / 1257));
+  line-height: normal;
 }
 
 @media all and (max-width: 1502px) {
@@ -764,9 +782,14 @@ footer i:nth-child(3) {
 
 @media all and (max-width: 1130px) {
   .contact__info {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    display: block;
+    width: 100%;
     margin-top: 5%;
+    -webkit-transform: translate(5.6%, 0);
+            transform: translate(5.6%, 0);
+  }
+  .connection {
+    display: block;
   }
   .contact {
     padding-left: calc(50px + 114.28 * ((100vw - 768px) / 809));
@@ -793,7 +816,7 @@ footer i:nth-child(3) {
 
 @media all and (max-width: 767px) {
   header {
-    background-color: darkgray;
+    background-color: #313030;
     position: relative;
     top: 0;
   }
@@ -821,6 +844,7 @@ footer i:nth-child(3) {
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
+    z-index: 50;
   }
   .burger::before, .burger::after {
     content: '';
@@ -905,6 +929,9 @@ footer i:nth-child(3) {
   .contact__text {
     padding-right: 0;
   }
+  .contact__info {
+    margin-right: -5%;
+  }
 }
 
 @media all and (max-width: 719px) {
@@ -921,6 +948,25 @@ footer i:nth-child(3) {
   }
   .illustration {
     margin-bottom: 5%;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .nav {
+    padding-left: 0;
+    height: auto;
+  }
+  .nav__list {
+    display: block;
+    height: auto;
+  }
+  .nav__item {
+    padding-top: calc(30px + 2 * ((100vw - 320px) / 330));
+    padding-bottom: calc(30px + 2 * ((100vw - 320px) / 330));
+  }
+  .nav.visible {
+    z-index: 3;
+    top: 100%;
   }
 }
 
@@ -959,5 +1005,20 @@ footer i:nth-child(3) {
   }
   .team__member.active .info {
     margin-left: 0;
+  }
+  .subscribing__email {
+    display: block;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  .subscribing__button {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .license {
+    padding-right: 5%;
   }
 }
