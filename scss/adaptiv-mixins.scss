@@ -1,0 +1,37 @@
+@mixin adaptiv-font ($pcSize, $mobSize) {
+	$maxWidth: $maxWidth - 320;
+	$addSize: $pcSize - $mobSize;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin adaptivVpadding ($pcTop, $pcBottom, $mobTop, $mobBottom, $mobWidth) {
+	$addTop: $pcTop - $mobTop;
+	$addBottom: $pcBottom - $mobBottom;
+	$maxWidth: $maxWidth - $mobWidth;
+
+	padding-top: calc(#{$mobTop + px} + #{$addTop} * ((100vw - #{$mobWidth + px}) / #{$maxWidth}));
+	padding-bottom: calc(#{$mobBottom + px} + #{$addBottom} * ((100vw - #{$mobWidth + px}) / #{$maxWidth}));
+}
+
+@mixin adaptivHpadding ($pcLeft, $pcRight, $mobLeft, $mobRight, $mobWidth) {
+	$addLeft: $pcLeft - $mobLeft;
+	$addRight: $pcRight - $mobRight;
+	$maxWidth: $maxWidth - $mobWidth;
+
+	padding-left: calc(#{$mobLeft + px} + #{$addLeft} * ((100vw - #{$mobWidth + px}) / #{$maxWidth}));
+	padding-right: calc(#{$mobRight + px} + #{$addRight} * ((100vw - #{$mobWidth + px}) / #{$maxWidth}));
+}
+
+@mixin adaptiv-width ($pcSize, $mobSize, $mobWidth) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - $mobWidth;
+
+	width: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$mobWidth + px}) / #{$maxWidth}));
+}
+
+@mixin adaptiv-height ($pcSize, $mobSize, $mobWidth) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - $mobWidth;
+
+	height: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$mobWidth + px}) / #{$maxWidth}));
+}
